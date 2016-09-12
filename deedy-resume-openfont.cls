@@ -36,7 +36,7 @@
 \textblockorigin{0mm}{5mm} % start everyth
 \newcommand{\lastupdated}{\begin{textblock}{60}(165,0)
 \color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on
+Updated on
 \today
 \end{textblock}}
 
