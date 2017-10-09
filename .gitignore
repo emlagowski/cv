@@ -1,6 +1,4 @@
-deedy_resume-openfont.aux
-deedy_resume-openfont.log
-deedy_resume-openfont.out
-deedy_resume-openfont.pdf
-deedy_resume-openfont.synctex.gz
+*.aux
 *.log
+*.out
+*.synctex.gz
