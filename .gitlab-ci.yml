@@ -1,0 +1,7 @@
+compile_pdf:
+  image: moss/xelatex:v1.1.0
+  script:
+    - ./compile.sh
+  artifacts:
+    paths:
+      - marcin_lagowski_cv.pdf
