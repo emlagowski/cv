@@ -1,5 +1,5 @@
 compile_pdf:
-  image: moss/xelatex:v1.1.0
+  image: moss/xelatex
   script:
     - ./compile.sh
   artifacts:
