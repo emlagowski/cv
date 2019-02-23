@@ -1,4 +1,4 @@
-# my-deedy-resume
+# CV
 
 Source:
 https://github.com/deedy/Deedy-Resume
