@@ -40,13 +40,12 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TIMESTAMP: ${{ date "+%Y-%m-%d-%H_%M" }}
       with:
         tag_name: ${{ github.ref }}$TIMESTAMP
         release_name: Release ${{ github.ref }}$TIMESTAMP
         draft: false
         prerelease: false
-      env:
-        TIMESTAMP: ${{ date "+%Y-%m-%d-%H_%M" }}
 
     - name: Upload Release Asset
       id: upload-release-asset 
