@@ -26,7 +26,7 @@ jobs:
       uses: xu-cheng/latex-action@1.2.1
       with:
         root_file: marcin_lagowski_cv.tex
-        args: -xelatex -file-line-error -interaction=nonstopmode
+        args: -xelatex -pdf -file-line-error -interaction=nonstopmode
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
