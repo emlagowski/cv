@@ -32,5 +32,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: marcin-lagowski-cv.pdf
-        path: ./marcin-lagowski-cv.pdf
+        name: marcin_lagowski_cv.pdf
+        path: ./marcin_lagowski_cv.pdf
