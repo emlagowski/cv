@@ -35,15 +35,18 @@ jobs:
         name: marcin_lagowski_cv.pdf
         path: ./marcin_lagowski_cv.pdf
 
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H_%M')"
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TIMESTAMP: ${{ date "+%Y-%m-%d-%H_%M" }}
       with:
-        tag_name: ${{ github.ref }}$TIMESTAMP
-        release_name: Release ${{ github.ref }}$TIMESTAMP
+        tag_name: ${{ github.ref }}${{steps.date.outputs.date}}
+        release_name: Release ${{ github.ref }}${{steps.date.outputs.date}}
         draft: false
         prerelease: false
 
