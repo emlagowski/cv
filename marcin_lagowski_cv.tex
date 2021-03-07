@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Deedy - One Page Two Column Resume
 % LaTeX Template
-% Version 1.1 (30/4/2014)
+% Version 1.2 (16/9/2014)
 %
 % Original author:
 % Debarghya Das (http://debarghyadas.com)
@@ -45,6 +45,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage[skins,breakable]{tcolorbox}
+ 
+\pagestyle{fancy}
+\fancyhf{}
 
 
 \begin{document}
@@ -61,252 +66,35 @@
 %     TITLE NAME
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\namesection{Marcin}{Łagowski}{ \urlstyle{same}\url{https://emlagowski.github.io} \\
+\namesection{Marcin}{Łagowski}{ \urlstyle{same}\href{https://emlagowski.github.io}{emlagowski.github.io} \\
 \href{mailto:marcinlagowski92@gmail.com}{marcinlagowski92@gmail.com} | +48 514 010 231
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     COLUMN ONE
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[
+  blanker,
+  width=0.64\textwidth,enlarge left by=0.36\textwidth,
+  before skip=6pt,
+  breakable,
+  overlay unbroken and first={%
+    \node[inner sep=0pt,outer sep=0pt,text width=0.33\textwidth,
+      align=none,
+      below right]
+      at ([xshift=-0.36\textwidth]frame.north west)
+  {%
 
-\begin{minipage}[t]{0.33\textwidth} 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    %     COLUMN ONE
+    %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \input{skills.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     EDUCATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Education} 
-
-%\subsection{Warsaw University of Technology}
-\runsubsection{Warsaw University of Technology}
-\descript{| Faculty of Electronics and Information Technology}
-\sectionsep
-
-\descript{M.Eng. Computer Science}
-\location{Graduated Oct 2019}
-Information Systems Engineering
-
-\custombold{Thesis:} Next location recommendation basing on sequential rules mining, recurrent neural network and spatial data from social networks.
-\sectionsep
-
-\descript{B.Eng. Telecommunications}
-\location{Graduated Feb 2016 }
-Information and Communication Technologies
-
-\custombold{Thesis:} SociaInfo – System and mobile application supporting ad-hoc meetings.
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COURSEWORK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\section{Coursework}
-%\subsection{Graduate}
-%Advanced Machine Learning \\
-%Open Source Software Engineering \\
-%Advanced Interactive Graphics \\
-%Compilers + Practicum \\
-%Cloud Computing \\
-%\sectionsep
-%
-%\subsection{Undergraduate}
-%Information Retrieval \\
-%Operating Systems \\
-%Artificial Intelligence + Practicum \\
-%Functional Programming \\
-%Computer Graphics + Practicum \\
-%{\footnotesize \textit{\textbf{(Research Asst. \& Teaching Asst) }}} \\
-%Unix Tools and Scripting \\
-%\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     SKILLS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Skills}
-\subsection{Programming}
-\location{Languages:}
-Java \textbullet{}
-Kotlin \textbullet{}
-Scala \\
-\location{Databases:}
-PostgreSQL \textbullet{}   
-Cassandra \textbullet{} 
-Mongo \textbullet{} 
-SQL \\
-\location{DevOps:}
-Docker \textbullet{} 
-Kubernetes \textbullet{} 
-Jenkins \textbullet{} 
-CI \& CD Process automation\\
-\location{Technologies:}
-Spring Boot \textbullet{} 
-Play! Framework \textbullet{} 
-RabbitMQ \textbullet{} 
-Apache Spark \\
-\location{Tools:}
-Git \textbullet{} 
-Gradle \textbullet{} 
-Maven \textbullet{}
-IntelliJ \textbullet{}
-MacOS \textbullet{} 
-Linux \\
-\location{Tests:}
-JUnit \textbullet{} 
-Mockito \textbullet{} 
-Gatling \textbullet{} 
-Spock \\
-\sectionsep
-\subsection{Languages}
-Polish (native) \\
-English (B2)
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LINKS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Links} 
-Github:// \href{https://github.com/emlagowski}{\custombold{emlagowski}} \\
-LinkedIn://  \href{https://www.linkedin.com/in/marcinlagowski}{\custombold{marcinlagowski}} \\
-StackOverflow://  \href{http://stackoverflow.com/users/3233685/marcin-lagowski}{\custombold{marcinlagowski}} 
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     HOBBY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Hobby}
-Football \textbullet{}   
-Fantasy books \textbullet{} 
-Mobile apps development \textbullet{} 
-New technologies \\
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     COLUMN TWO
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\end{minipage} 
-\hfill
-\begin{minipage}[t]{0.66\textwidth} 
+  };}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{experience.tex}
 
-\section{Experience}
-
-\runsubsection{Nationale-Nederlanden}
-\descript{| Software Developer }
-\location{ September 2019 – until now | Warsaw, Poland}
-Extending the functionality of the document management and satellite systems. Automation of CI \& CD processes.
-
-\custombold{Stack:} Spring Boot, Kubernetes, Spock (Groovy), PostgreSQL, Jenkins, Docker, Linux
-\sectionsep
-
-\runsubsection{PwC}
-\descript{| Software Developer }
-\location{ April 2019 – August 2019 | Warsaw, Poland}
-Migration of the legacy system and development of the foundations of the new system in microservice architecture using Domain Driven Design.
-
-\custombold{Stack:} Kotlin, Spring Boot, Hibernate, Spock (Groovy), PostgreSQL, Docker, Linux
-\sectionsep
-
-\runsubsection{Raiffeisen Polbank}
-\descript{| Java Developer }
-\location{ January 2018 – March 2019 | Warsaw, Poland}
-Backend development of features related to card payments (Base24, POS / ATM) and internet transfers. 
-Developing new and migrating legacy systems to Spring Boot in microservices architecture.
-Implementation of multi currency card transactions handling. 
-Implementation of Hystrix into services.
-% \vspace{\topsep} % Hacky fix for awkward extra vertical space
-% \begin{tightemize}
-% \item development of services in microservices architecture
-% \item implementation of multi currency card
-% \item migration of services to Spring Boot
-% \item implementation of Hystrix into services
-% \item contribution to the CI / CD processes
-% \end{tightemize}
-
-\custombold{Stack:} Java 8, Spring Boot, Hystrix, Consul, Vault, PostgreSQL, Redis, Docker, Grafana, Kibana, SonarQube
-\sectionsep
-
-\runsubsection{Turbine Analytics}
-\descript{| Java Developer + DevOps Lead }
-\location{ December 2015 – December 2017 | Warsaw, Poland}
-Backend development of the asset management application with high availability and automated deployment.
-Participation in design and implementation of the system architecture. 
-Setting up Cassandra. Modeling Cassandra column families (Stock data).
-Participation in setting up Spark. Implementing simple Spark jobs in Scala. 
-Design and implementation of the external system API.
-Deployment of the system stack with Docker (microservices, databases etc.).
-Setting up continuous delivery process.
-% \begin{tightemize}
-% % \item Implementation of the new backend features in Java.
-% \item Participation in design and implementation of the system architecture. 
-% \item Setting up Cassandra. Modeling Cassandra column families (Stock data).
-% \item Participation in setting up Spark. Implementing simple Spark jobs in Scala. 
-% \item Design and implementation of the external system API.
-% \item Deployment of the system stack with Docker (microservices, databases etc.).
-% \item Setting up continuous delivery process.
-% \end{tightemize}
-
-\custombold{Stack:} Java 8, Play! Framework, Docker, Swarm, Cassandra, CQL, PostgreSQL, Guice, Scala, Spark, Zeppelin, RabbitMQ, SBT, Git, IntelliJ, Checkstyle, Linux, Spock
-\sectionsep
-
-\runsubsection{Turbine Analytics}
-\descript{| Junior Java Developer }
-\location{ July 2015 – November 2015 | Warsaw, Poland}
-Implementation of the new backend features in Java.
-Third party API Integration (Financial Data).
-Development of the internal API between microservices.
-Moved microservice system deployment to Docker containers. Creating docker images and stacks based on the containers.
-% \begin{tightemize}
-% \item Implementation of the new backend features in Java.
-% \item Third party API Integration (Financial Data).
-% \item Development of the internal API between microservices.
-% \item Moved microservice system deployment to Docker containers. Creating docker images and stacks based on the containers.
-% \end{tightemize}
-
-\custombold{Stack:} Java 8, Play! Framework, Docker, PostgreSQL, Git, IntelliJ, Linux
-\sectionsep
-
-\runsubsection{Samsung R\&D Poland}
-\descript{| Intern Java Developer }
-\location{ May 2014 – June 2015 | Warsaw, Poland}
-Implementation of new solutions in the Test Process Support team. Requirements analysis, developing applications (mostly for Android and Java8) for internal clients, automation of test processes, performance analysis and code inspection.
-
-\custombold{Stack:} Java 8, Android, Kotlin, JavaFX, Git
-\sectionsep
-
-%\runsubsection{Warsaw University of Technology Business School}
-%\descript{| IT Helpdesk }
-%\location{ October 2013 – April 2014 | Warsaw, Poland}
-%\begin{tightemize}
-%\item Ensuring efficient and reliable operation of all elements of the School internal computer network,
-%\item Support for workers. Consultation about hardware, software, computer maintenance , periodic cleaning, archiving resources, 
-%\item Ensuring the security of resources of all computers on the network.
-%\end{tightemize}
-%\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     AWARDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- \section{Awards} 
- \begin{tabular}{rll}
- Mar 2017	     & 1\textsuperscript{st}     & Allegro BrainCode - Hackaton \\
- Oct 2015	     & 1\textsuperscript{st}/11  & HP Developer Day  - Hackaton\\
- Oct 2013 \& Feb 2013	     & Best Cat.  & President’s scholarship for academic achievements \\
-%  Feb 2013	     & Best Cat.  & President’s scholarship for academic achievements \\
- \end{tabular}
- \sectionsep
-
-\end{minipage} 
+\end{tcolorbox}
 \end{document}  \documentclass[]{article}
